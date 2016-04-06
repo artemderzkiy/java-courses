@@ -1,4 +1,4 @@
-import java.lang.System;
+import java.lang.System
 
 public class SimpleDotComTestDrive{
     public static  void main(String[] args){
