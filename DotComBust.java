@@ -1,6 +1,8 @@
 import java.lang.String;
 import java.lang.System;
-import java.util;
+
+import java.util.ArrayList;
+
 
 public class DotComBust
 {
@@ -13,9 +15,9 @@ public class DotComBust
      DotCom ob1 = new DotCom();
        ob1.setName("Sobaka.com");
        DotCom ob2 = new DotCom();
-       ob2.setName("govno.com")
+       ob2.setName("govno.com");
        DotCom ob3 = new DotCom();
-       ob3.setName("ukushuka.ru")
+       ob3.setName("ukushuka.ru");
        dotComList.add(ob1);
        dotComList.add(ob2);
        dotComList.add(ob3);

@@ -18,7 +18,7 @@ public class DotCom
 
     public String checkYourself(String userInput)
     {
-        String result = "MIMO";
+        String result = "MIMO NAHUI";
         int index = locationCells.indexOf(userInput);
         if (index>=0)
         {

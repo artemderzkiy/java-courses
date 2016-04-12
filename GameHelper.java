@@ -57,7 +57,7 @@ public class GameHelper {
                         success = false;                         // failure
                     }
                 } else {                                      // found already used location
-                    // System.out.print(" used " + location);
+                    System.out.print(" used " + location);
                     success = false;                          // failure
                 }
             }
