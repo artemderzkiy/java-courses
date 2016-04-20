@@ -1,15 +1,18 @@
 import javax.swing.*;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import java.awt.*;
 import java.awt.BorderLayout;
 import java.awt.event.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.lang.String;
 
-public class SimpleGui3C implements ActionListener
+public class SimpleGui3C
 {
     JFrame frame;
+    JLabel label;
     public static void main (String[] args)
     {
         SimpleGui3C gui = new SimpleGui3C();
@@ -21,21 +24,43 @@ public class SimpleGui3C implements ActionListener
         frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        JButton button = new JButton("Change color");
-        button.addActionListener(this);
+        JButton labelButton = new JButton("Change label");
+       labelButton.addActionListener(new LabelListener());
+
+        JButton colorButton = new JButton("Change color");
+        colorButton.addActionListener(new ColorListener());
+
+        label = new JLabel("i am label");
+
 
         MyDrawPanel drawPanel = new MyDrawPanel();
 
-        frame.getContentPane().add(BorderLayout.SOUTH, button);
+        frame.getContentPane().add(BorderLayout.SOUTH, colorButton);
         frame.getContentPane().add(BorderLayout.CENTER, drawPanel);
+        frame.getContentPane().add(BorderLayout.EAST,labelButton);
+        frame.getContentPane().add(BorderLayout.NORTH,label);
         frame.setVisible(true);
         frame.setSize(300,300);
     }
 
-    public void actionPerformed (ActionEvent event)
+    class LabelListener implements ActionListener
     {
-        frame.repaint();
+
+        public void actionPerformed(ActionEvent event) {
+            String s = "govnyashka";
+            label.setText(s);
+            s+=s;
+        }
     }
+
+    class ColorListener implements ActionListener
+    {
+
+        public void actionPerformed(ActionEvent event) {
+            frame.repaint();
+        }
+    }
+
 
 }
 
